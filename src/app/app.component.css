@@ -1,0 +1,7 @@
+align-right {
+  align-content: flex-end;
+}
+
+mat-tab-group {
+  width: 50%;
+}
