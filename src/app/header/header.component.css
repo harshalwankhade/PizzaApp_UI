@@ -1,0 +1,17 @@
+div {
+  background-color: aquamarine;
+  padding: 1%;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+mat-icon {
+  transform: scale(1.5);
+}
+
+.example-button-toggle-label {
+  display: inline-block;
+  margin: 16px;
+}

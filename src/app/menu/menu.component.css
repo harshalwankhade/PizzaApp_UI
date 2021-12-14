@@ -1,0 +1,12 @@
+.pizza-card {
+  width: 80%;
+  height: 70%;
+  display: block;
+  background-color:cornsilk;
+}
+
+img {
+  max-width: 20%;
+  max-height: 20%;
+  align-items: center;
+}
