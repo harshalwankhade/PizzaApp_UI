@@ -8,7 +8,7 @@
     <mat-button mat-tab-link routerLink="/sides"> sides </mat-button>
     <span class="align-right">
     <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon routerLink="/shoppingCart" matBadge="0" matBadgeColor="warn">shopping_cart</mat-icon>
+      <mat-icon routerLink="/shoppingCart" matBadge="{{cartItemsCount}}" matBadgeColor="warn">shopping_cart</mat-icon>
     </button>
   </span>
   </nav>

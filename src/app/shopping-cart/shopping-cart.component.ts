@@ -1,3 +1,5 @@
+import { FoodItems } from './../models/FoodItems';
+import { ShoppingCartServiceService } from './../services/shopping-cart-service.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShoppingCartComponent implements OnInit {
 
-  constructor() { }
+  cartItems :any;
+
+  constructor(private _shoppingCartServiceService: ShoppingCartServiceService) { }
 
   ngOnInit(): void {
+    //console.log('this._shoppingCartServiceService.GetAllCartItems() '+this._shoppingCartServiceService.GetAllCartItems().)
+    //console.log('before cartItems-'+this.cartItems)
+    this._shoppingCartServiceService.GetAllCartItems().subscribe(
+      val=> this.cartItems=val
+    );
+    //console.log('after cartItems-'+this.cartItems)
+  }
+
+  RemoveFromCart(item: FoodItems){
+    this._shoppingCartServiceService.RemoveFromCart(item.name);
   }
 
 }

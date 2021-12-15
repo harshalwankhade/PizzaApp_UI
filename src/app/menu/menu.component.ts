@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FoodItems } from '../models/FoodItems';
+import { ShoppingCartServiceService } from "../services/shopping-cart-service.service";
 
 @Component({
   selector: 'app-menu',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _shoppingcartservice: ShoppingCartServiceService) { }
 
   pizzasList:any =[
     {
@@ -30,4 +32,7 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  AddToCart(foodItem: FoodItems){
+    this._shoppingcartservice.AddToCart(foodItem);
+  }
 }
