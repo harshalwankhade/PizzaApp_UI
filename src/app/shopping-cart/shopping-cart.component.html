@@ -1,6 +1,5 @@
-<p>shopping-cart</p>
 
-<div *ngFor="let item of cartItems">
+<!-- <div *ngFor="let item of cartItems">
   <mat-card class="shoppingCart-card">
     <mat-card-header>
       <mat-card-title>{{item.name}}</mat-card-title>
@@ -15,11 +14,20 @@
       <mat-icon class="removeButton" (click)="RemoveFromCart(item)">delete</mat-icon>
     </mat-card-actions>
   </mat-card>
-</div>
+</div> -->
 
+<table *ngIf="cartItems.length>0">
+  <th>Item Name</th>
+  <th>Quantity</th>
+  <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
+  <th><mat-icon mat-stroked-button (click)="EmptyCart()">remove_shopping_cart</mat-icon></th>
+  <tr *ngFor="let item of cartItems">
+    <td>{{item.name}}</td>
+    <td><input type="number" value="1"/></td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
 
-<mat-grid-list cols="1" >
-  <mat-grid-tile *ngFor="let item of cartItems">
+    <td><mat-icon class="removeButton" (click)="RemoveFromCart(item)">delete</mat-icon></td>
+  </tr>
+</table>
 
-  </mat-grid-tile>
-</mat-grid-list>
+<div>
