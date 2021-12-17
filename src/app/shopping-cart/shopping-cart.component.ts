@@ -32,6 +32,7 @@ export class ShoppingCartComponent implements OnInit {
 
   EmptyCart(){
     this.cartItems=[];
+    this._shoppingCartServiceService.ClearCart();
     this._snackBar.openFromComponent(PizzaPartyComponent, {
       duration: this.durationInSeconds * 1000,
     });

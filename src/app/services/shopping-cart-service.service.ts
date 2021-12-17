@@ -30,6 +30,5 @@ export class ShoppingCartServiceService {
 
   ClearCart() {
     this.foodItemsState$.next([]);
-    //return this.foodItemsState$;
   }
 }
